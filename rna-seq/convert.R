@@ -19,6 +19,6 @@ y$meta <- y$meta[, 2:1];
 rownames(y$data) <- y$meta$gene;
 
 # log transformation
-y$data <- as.matrix( log2(y$data + 1 - min(y$data)) );
+y$data <- as.matrix( log(y$data + 1) );
 
 qwrite(y, "expr_tissue-median_gtex.rds");
