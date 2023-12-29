@@ -18,9 +18,6 @@ colnames(y$meta) <- c("ensembl_id", "gene");
 y$meta <- y$meta[, 2:1];
 rownames(y$data) <- y$meta$gene;
 
-# rename meta as features
-names(y)[1] <- "features";
-
 # log transformation
 y$data <- as.matrix( log2(y$data + 1 - min(y$data)) );
 
