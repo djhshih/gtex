@@ -21,4 +21,4 @@ rownames(y$data) <- y$meta$gene;
 # log transformation
 y$data <- as.matrix( log(y$data + 1) );
 
-qwrite(y, "expr_tissue-median_gtex_symbol.rds");
+qwrite(y, "expr_gtex_tissue-median_ltpm_symbol.rds");

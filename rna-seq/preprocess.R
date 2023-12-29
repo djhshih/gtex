@@ -31,8 +31,8 @@ x <- filter_genes(x, !idx);
 # now, we can use the simplified ensembl IDs in the matrix
 rownames(x$data) <- x$meta$ensembl_id;
 
-# log transformation
-x$data <- as.matrix( log(x$data + 1) );
+# convert to matrix
+x$data <- as.matrix(x$data);
 
 # non-specific filtering
 
@@ -42,4 +42,4 @@ sum(bad)
 
 x <- filter_genes(x, !bad);
 
-qwrite(x, "expr_gtex.rds");
+qwrite(x, "expr_gtex_tpm.rds");
